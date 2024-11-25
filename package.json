@@ -10,8 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "ejs": "^3.1.9",
-    "express": "^4.19.2",
+    "express": "^4.21.1",
     "express-fileupload": "^1.5.0",
     "express-myconnection": "^1.0.4",
     "morgan": "^1.10.0",
