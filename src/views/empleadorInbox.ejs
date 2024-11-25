@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Jobify</title>
+     <link rel="stylesheet" href="CSS/style.css">
+     <!-- RemixIcon: Stylesheet de iconos de alta definicion. -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+     <!-- Encabezado de pagina. -->
+     <header class="header" id="header">
+      <!-- Contenedor de la navegacion. -->
+          <nav class="nav container">
+               <a href="/" class="nav__logo">Jobify</a>
+                 <a href="/" class="nav__logo">
+                    <img src="IMAGES/JBY.png" alt="Jobify Logo" style="height: 63px;">
+                 </a>
+               <p class="nav__logo">Mis postulaciones</p>
+
+               <!-- Menu de navegacion. -->
+               <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                         <a href="/empleador-auth" class="nav__link">Mis vacantes</a>
+                    </li>
+                    <li class="nav__item">
+                         <a href="/publicar-vacante" class="nav__link">Publicar</a>
+                    </li>
+                    <li class="nav__item">
+                      <a href="/empleador-buzon" class="nav__link" style="text-decoration: underline;">Mi buzón</a>
+                 </li>
+                    <li class="nav__item">
+                         <a href="/empleador-mi-perfil" class="nav__link" >Mi Perfil</a>
+                    </li>
+                    <li class="nav__item">
+                       <a  href="/" class="nav__link">Cerrar sesión</a>
+                  </li>
+               </ul>
+
+                    <!-- Boton de cerrado. -->
+                    <div class="nav__close" id="nav-close">
+                         <i class="ri-close-large-line"></i>
+                    </div>
+               </div>
+
+          <!-- Boton de menu. -->
+               <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-apps-2-line"></i>
+               </div>
+          </nav>
+     </header>
+
+
+<!--===== Pagina Principal =====-->
+<main class="main">
+     <!--====== Seccion de Inicio =====-->
+     <section class="home">
+          <div class="home__container">
+               <h3 style="text-align: center;">*Estas son las postulaciones a tus vacantes.</h3>
+               <div class="home__data">
+                    <div class="carrusel">
+                         <button class="prev">Anterior</button>
+                    <div class="carrusel-items" id="card-container">
+                         <!-- Aquí se generarán dinámicamente las tarjetas -->
+                         <% data.forEach(dataItem => { %> <!-- Iterar sobre cada registro -->
+                           <div class="card">
+                             <div class="card-content">
+                                        <p hidden><%= dataItem.id%></p>
+                                        <h2 class="card-title"><strong><%= dataItem.titulo %></strong> </h2>
+                                        <br>
+                                        <p class="card-description"><strong>Nombre(s): </strong>$<%= dataItem.nombre%></p>
+                                        <br>
+                                        <p class="card-description"><strong>Apellido(s): </strong> <%= dataItem.apellidos%></p>
+                                        <br>
+                                        <p class="card-description"><strong>Fecha de nacimiento: </strong> <%= dataItem.fechaNacimiento%></p>
+                                        <br>
+                                        <p class="card-description"><strong>Edad: </strong> <%= dataItem.edad%></p>
+                                        <br>
+                                        <p class="card-description"><strong>Domicilio: </strong><%= dataItem.domicilio%></p>
+                                        <br>
+                                        <p class="card-description"><strong>Telefono: </strong><%= dataItem.numTelefono%></p>
+                                        <br>
+                                        <p class="card-description"><strong>Correo: </strong><%= dataItem.correo%></p>
+                                        <br>
+                                        <div class="card-buttons">
+                                             <button class="deleteBtn" onclick="handleDeleteButtonClick('<%= dataItem.id%>')">Quitar</button>
+                                        </div>
+                             </div>
+                           </div>
+                         <% }); %>
+                    </div>
+                    <button class="next">Siguiente</button>
+               </div>
+               </div>
+          </div>
+     </section>
+</main>
+<!--===== Pie de Pagina (NO ESCRIBIR CODIGO DESPUES DE ESTE PUNTO) =====--> 
+<footer class="home__footer">
+     <div class="footer__container1">
+         <div class="box">
+             <figure>
+                 <a href="#">
+                     <img src="IMAGES\logo.png" alt="Logo de JB (Jobify)">
+                 </a>
+             </figure>
+         </div>
+         <div class="box">
+             <h2>NOSOTROS</h2>
+             <p>Somos un grupo de programadores estudiantes a favor del trabajo digno y de la libertad del trabajador.</p>
+             <p>Con nuestra pagina esperamos que mas personas encuentren su trabajo ideal, con trasparerencia y un trato digno.</p>
+         </div>
+         <div class="box">
+             <h2>CONTACTANOS</h2>
+             <div class="redes">
+               <a href="https://www.facebook.com/profile.php?id=61558541945650"  class="nav__social-iconf">
+                   Fb
+                   <i class="ri-facebook-box-line"></i>
+              </a>
+              <a href="https://www.instagram.com/jobify.fy/?hl=es-es" class="nav__social-iconf">
+                   Ig
+                   <i class="ri-instagram-line"></i>
+              </a>
+              <a href="https://twitter.com/Jobify_job" class="nav__social-iconf">
+                   Tw
+                   <i class="ri-twitter-x-line"></i>
+              </a>
+           </div>
+         </div>
+     </div>
+     <div class="footer__container2">
+         <small>&copy; 2024 <b>Jobify</b> - Todos los derechos reservados.</small>
+     </div>
+ </footer>
+      <script src="JS\index.js"></script>
+</body>
+     <script>
+
+          function handleDeleteButtonClick(inboxId) {
+               if (confirm('¿Estás seguro de que deseas quitar esta postulación a tu vacante?')) {
+                    deleteApply(inboxId);
+                    location.reload();
+               };
+          };
+
+          function deleteApply(inboxId) {
+               fetch('/empleador-delete-inbox' + inboxId, {
+                    method: 'DELETE',              
+               })
+                    .then(response => response.json())
+                    .then(data => {
+                         location.reload();
+                    })
+                    .catch(error => console.error('Error:', error));
+          }
+     </script>
+</html>

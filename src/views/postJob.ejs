@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Jobify</title>
+     <link rel="stylesheet" href="CSS/style2.css">
+     <!-- RemixIcon: Stylesheet de iconos de alta definicion. -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+     <!-- Encabezado de pagina. -->
+     <header class="header" id="header">
+      <!-- Contenedor de la navegacion. -->
+          <nav class="nav container">
+               <a href="/empleador-auth" class="nav__logo">
+                <a href="#" class="nav__logo">jobify</a>
+                 <a href="#" class="nav__logo">
+                    <img src="IMAGES/JBY.png" alt="Jobify Logo" style="height: 63px;">
+                 </a>
+               <p class="nav__logo">Publicar vacante</p>
+
+               <!-- Menu de navegacion. -->
+               <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                         <li class="nav__item">
+                              <a href="/empleador-auth" class="nav__link">Mis vacantes</a>
+                         </li>
+                         <li class="nav__item">
+                              <a href="#" class="nav__link" style="text-decoration: underline;">Publicar</a>
+                         </li>
+                         <li class="nav__item">
+                            <a href="/empleador-buzon" class="nav__link">Mi buzón</a>
+                       </li>
+                         <li class="nav__item">
+                              <a href="/empleador-mi-perfil" class="nav__link">Mi Perfil</a>
+                         </li>
+                         <li class="nav__item">
+                            <a  href="/" class="nav__link">Cerrar sesión</a>
+                       </li>
+                    </ul>
+
+                    <!-- Boton de cerrado. -->
+                    <div class="nav__close" id="nav-close">
+                         <i class="ri-close-large-line"></i>
+                    </div>
+               </div> 
+
+          <!-- Boton de menu. -->
+          <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-apps-2-line"></i>
+          </div>
+     </nav>
+</header>
+
+<!--===== Pagina Principal =====-->
+<main class="main">
+    <!--====== Seccion de Inicio =====-->
+    <section class="home">
+        <div class="home__container">
+            <div class="home__data">
+                <form class="form" action="/post-job" method="post" enctype="multipart/form-data">
+                    <h1>Publicar nueva vacante</h1><br>
+                    <h2>Informacion de la vacante</h2>
+                    <div class="account-info">
+                        <div class="input-boxR">
+                            <i class="ri-building-2-line"></i>
+                            <label for="form_name">Titulo</label>
+                            <input id="form_name" type="text" name="title" class="inputsR" placeholder="Titulo de la vacante" required="required" data-error="Firstname is required.">
+                        </div>
+                        <div class="input-boxR">
+                            <i class="ri-wallet-2-line"></i>
+                            <label for="form_lastname">Salario</label>
+                            <input id="form_lastname" type="number" name="salary" class="inputsR" placeholder="Salario $" required="required" data-error="Lastname is required.">
+                        </div>
+                        <div class="input-boxR">
+                            <i class="ri-time-line"></i>
+                            <label for="form_email">Horario</label>
+                            <input id="form_email" type="text" name="schedule" class="inputsR" placeholder="Horario y dias laborales" required="required" data-error="Valid email is required.">
+                        </div>
+                    </div>
+                    <h2>Requerimentos y material de apoyo</h2>
+                    <div class="enterprise-info">
+                        <div class="input-boxR">
+                            <label for="form_messagee">Requisitos</label>
+                            <textarea id="form_messagee" name="requirements" class="inputsR" placeholder="Requisitos" rows="6" cols="35" required="required" data-error="Please, leave us a message."></textarea>
+                        </div>
+                        <div class="input-boxR">
+                            <label for="form_message">Descripción</label>
+                            <textarea id="form_message" name="description" class="inputsR" placeholder="Descripción de la vacante" rows="6" cols="35" required="required" data-error="Please, leave us a message."></textarea>
+                        </div>
+                    </div>
+                    <label for="form_video">Multimedia de capacitación</label>
+                    <input type="file" id="form_video" name="multimedia" class="form-control-file"><br>
+                    <input type="submit" class="btnR" value="Publicar">
+                </form>
+                <div class="tarjeta">
+                    <div class="titulo">Espacio para publicar vacantes.</div>
+                    <div class="cuerpo">
+                    <img src="IMAGES\VACANTE.jpg" alt="Candidatos diversos (Jobify)"><br>
+                    </div>
+                    <div class="pie">
+                        <a href="#" class="arrow">Más información</a> 
+                                   <div class="contenido-oculto">
+                                    Animamos a nuestros empleadores a publicar vacantes claras y dignas para nuestros usuarios.<br> Igualmente nos gustaria que, si tiene algun contenido multimedia que pueda apoyar a nuestros usuarios candidatos a comprender mejor la vacante, lo comparta en este espacio.
+                                   </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+     </section>
+</main>
+<!--===== Pie de Pagina (NO ESCRIBIR CODIGO DESPUES DE ESTE PUNTO) =====--> 
+<footer class="home__footer">
+    <div class="footer__container1">
+        <div class="box">
+            <figure>
+                <a href="#">
+                    <img src="IMAGES/logo.png" alt="Logo de JB (Jobify)">
+                </a>
+            </figure>
+        </div>
+        <div class="box">
+            <h2>NOSOTROS</h2>
+            <p>Somos un grupo de programadores estudiantes a favor del trabajo digno y de la libertad del trabajador.</p>
+            <p>Con nuestra pagina esperamos que mas personas encuentren su trabajo ideal, con trasparerencia y un trato digno.</p>
+        </div>
+        <div class="box">
+            <h2>CONTACTANOS</h2>
+            <div class="redes">
+                <a href="https://www.facebook.com/profile.php?id=61558541945650"  class="nav__social-iconf">
+                    Fb
+                    <i class="ri-facebook-box-line"></i>
+               </a>
+               <a href="https://www.instagram.com/jobify.fy/?hl=es-es" class="nav__social-iconf">
+                    Ig
+                    <i class="ri-instagram-line"></i>
+               </a>
+               <a href="https://twitter.com/Jobify_job" class="nav__social-iconf">
+                    Tw
+                    <i class="ri-twitter-x-line"></i>
+               </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer__container2">
+        <small>&copy; 2024 <b>Jobify</b> - Todos los derechos reservados.</small>
+    </div>
+</footer>
+      <script src="JS\index.js"></script>
+</body>
+</html>

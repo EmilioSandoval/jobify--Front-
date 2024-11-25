@@ -1,0 +1,23 @@
+
+#table {
+    padding: 30px; 
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0.4, 0.4, 0.4, 0.4);
+}
+
+th {
+    padding: 10px;
+    text-align: center;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    border-color: black;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    border-color: black;
+}

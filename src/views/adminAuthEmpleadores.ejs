@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Panel de control</title>
+     <link rel="stylesheet" href="CSS/style.css">
+     <!-- RemixIcon: Stylesheet de iconos de alta definicion. -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+     <!-- Encabezado de pagina. -->
+     <header class="header" id="header">
+      <!-- Contenedor de la navegacion. -->
+          <nav class="nav container">
+               <a href="/" class="nav__logo">Jobify</a>
+               <a href="/" class="nav__logo">
+                  <img src="IMAGES/JBY.png" alt="Jobify Logo" style="height: 63px;">
+               </a>
+               <p class="nav__logo">Empleadores</p>
+
+               <!-- Menu de navegacion. -->
+               <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                         <li class="nav__item">
+                              <a href="/admin-auth" class="nav__link">Usuarios</a>
+                         </li>
+                         <li class="nav__item">
+                              <a href="/admin-auth-empleadores" class="nav__link">Empleadores</a>
+                         </li>
+                         <li class="nav__item">
+                            <a style="color: rgb(219, 66, 66);" href="/" class="nav__link">Cerrar sesión</a>
+                       </li>
+                    </ul>
+
+                    <!-- Boton de cerrado. -->
+                    <div class="nav__close" id="nav-close">
+                         <i class="ri-close-large-line"></i>
+                    </div>
+
+                    <!-- Redes sociales. -->
+                    <div class="nav__social">
+                         <a href="https://www.facebook.com/" target="_blank" class="nav__social-icon">
+                              <i class="ri-facebook-box-line"></i>
+                         </a>
+                         <a href="https://www.instagram.com/" target="_blank" class="nav__social-icon">
+                              <i class="ri-instagram-line"></i>
+                         </a>
+                         <a href="https://www.twitter.com/" target="_blank" class="nav__social-icon">
+                              <i class="ri-twitter-x-line"></i>
+                         </a>
+                    </div>
+               </div>
+
+          <!-- Boton de menu. -->
+               <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-apps-2-line"></i>
+               </div>
+          </nav>
+     </header>
+
+
+<!--===== Pagina Principal =====-->
+<main class="main">
+     <!--====== Seccion de Inicio =====-->
+     <section class="home">
+          <div class="home__container">
+               <div class="home__data">
+                
+                    <div class="card-container" id="card-container">
+                         <% data.forEach(dataItem => { %> 
+                           <div class="card">
+                             <div class="card-content">
+                                   <h2 class="card-title"><strong>Id: </strong><%= dataItem.id %></h2>
+                                   <br>
+                                   <p class="card-description"><strong>Correo: </strong><%= dataItem.correo %></p>
+                                   <br>
+                                   <p class="card-description"><strong>contraseña: </strong> <%= dataItem.contrasena %></p>
+                                   <br>
+                                   <p class="card-description"><strong>Nombre de la empresa: </strong> <%= dataItem.nombreEmpresa %></p>
+                                   <br>
+                                   <p class="card-description"><strong>Domicilio: </strong> <%= dataItem.domicilio%></p>
+                                   <br>
+                                   <p class="card-description"><strong>Razón social: </strong> <%= dataItem.razonSocial %></p>
+                                   <br>
+                                   <p class="card-description"><strong>Descripción: </strong> <%= dataItem.descripcion %></p> 
+                                   <br>
+                                   <p class="card-description"><strong>Fecha de registro: </strong> <%= dataItem.fechaRegistro %></p>
+                             </div>
+                             <div class="card-buttons">
+                               <button class="applyBtn" onclick="openEditBoxControlPanel('<%= dataItem.id %>')">Editar</button>
+                               <button class="deleteBtn" onclick="handleDeleteButtonClick('<%= dataItem.id %>')" id="deleteBtn">Eliminar</button>
+                             </div>
+                           </div>
+                         <% }); %>
+                    </div>
+                    <!-- Cuadro de Edición -->
+                    <form action="/admin-edit-empleador" method="POST" >
+                        <div id="editBox" style="display: none;">
+                            <h2>Editar información</h2>
+                            <br>
+                            <input type="hidden" id="accountId" name="accountId">
+                            <input type="text" class="editBoxInput" id="editedEmail" name="editedEmail" placeholder="Nuevo correo" required><br>
+                            <input type="text" class="editBoxInput" id="editedPassword" name="editedPassword" placeholder="Nuevo contraseña" required><br>
+                            <input type="text" class="editBoxInput" id="editedName" name="editedName" placeholder="Nuevo nombre" required><br>
+                            <input type="text" class="editBoxInput" id="editedAddress" name="editedAddress" placeholder="Nuevo domicilio" required></input><br>
+                            <input type="text" class="editBoxInput" id="editedRazonSocial" name="editedRazonSocial" placeholder="Nueva razón social" required></input><br>
+                            <input type="text" class="editBoxInput" id="editedDescripcion" name="editedDescription" placeholder="Nueva descripción" required></input><br>
+                            <button type="submit">Guardar</button>
+                            <button class="cancelBtn" onclick="closeEditBoxControlPanel()">Cancelar</button>
+                        </div>
+                    </form>
+               </div>
+          </div>
+     </section>
+</main>
+<!--===== Pie de Pagina (NO ESCRIBIR CODIGO DESPUES DE ESTE PUNTO) =====--> 
+<footer class="home__footer">
+    <div class="footer__container1">
+        <div class="box">
+            <figure>
+                <a href="#">
+                    <img src="IMAGES/logo.png" alt="Logo de JB (Jobify)">
+                </a>
+            </figure>
+        </div>
+        <div class="box">
+            <h2>NOSOTROS</h2>
+            <p>Somos un grupo de programadores estudiantes a favor del trabajo digno y de la libertad del trabajador.</p>
+            <p>Con nuestra pagina esperamos que mas personas encuentren su trabajo ideal, con trasparerencia y un trato digno.</p>
+        </div>
+        <div class="box">
+         <h2>CONTACTANOS</h2>
+         <div class="redes">
+             <a href="https://www.facebook.com/profile.php?id=61558541945650" target="_blank" class="nav__social-iconf">
+                 <i class="ri-facebook-box-line"></i>
+            </a>
+            <a href="https://www.instagram.com/jobify.fy/?hl=es-es" target="_blank" class="nav__social-iconf">
+                 <i class="ri-instagram-line"></i>
+            </a>
+            <a href="https://twitter.com/Jobify_job" target="_blank" class="nav__social-iconf">
+                 <i class="ri-twitter-x-line"></i>
+            </a>
+         </div>
+     </div>
+    </div>
+    <div class="footer__container2">
+        <small>&copy; 2024 <b>Jobify</b> - Todos los derechos reservados.</small>
+    </div>
+</footer>
+      <script src="JS\index.js"></script>
+</body>
+
+// delete y editar cuenta
+<script>
+
+     // Función para abrir el recuadro de edición panel de controljj
+     function openEditBoxControlPanel(accountId) {
+     document.getElementById("editBox").style.display = "block";
+     document.getElementById("accountId").value = accountId;
+
+     document.getElementById("editedEmail").value = "";
+     document.getElementById("editedPassword").value = "";
+     document.getElementById("editedName").value = "";
+     document.getElementById("editedAdress").value = "";
+     document.getElementById("editedRazonSocial").value = "";
+     document.getElementById("editedDescription").value = "";
+     }
+
+     // Función para cerrar el recuadro de edición
+     function closeEditBoxControlPanel() {
+     document.getElementById("editBox").style.display = "none";
+     }
+
+     // Función para guardar los cambios
+     function saveChangesControlPanel() {
+     closeEditBoxControlPanel();
+     }
+
+     function handleDeleteButtonClick(cuentaId) {
+         if (confirm('¿Estás seguro de que deseas eliminar esta cuenta?')) {
+            deleteCuenta(cuentaId);
+            location.reload();
+         }
+     }
+
+     function deleteCuenta(cuentaId) {
+         fetch('/admin-delete-empleador' + cuentaId, {
+              method: 'DELETE',              
+         })
+         .then(response => response.json())
+         .then(data => {
+              location.reload();
+         })
+         .catch(error => console.error('Error:', error));
+
+     }
+</script>
+
+</html>

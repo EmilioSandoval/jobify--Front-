@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- RemixIcon: Stylesheet de iconos de alta definicion. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+         <!-- Encabezado de pagina. -->
+         <header class="header" id="header">
+            <!-- Contenedor de la navegacion. -->
+                <nav class="navRL container">
+                    <a href="/" class="nav__logo">Jobify</a>
+                    <a href="/" class="nav__logo">
+                       <img src="IMAGES/JBY.png" alt="Jobify Logo" style="height: 63px;">
+                    </a>
+           </nav>
+      </header>
+<!--===== Pagina Principal =====-->
+<main class="main">
+     <!--====== Seccion de Inicio =====-->
+     <section class="home">
+          <div class="home__container">
+               <div class="home__data">
+                    <form class="form" action="/admin-login" method="POST">
+                         <h1>Entrar como administrador</h1>
+                         <div class="input-box">
+                              <i class="ri-user-fill"></i>
+                              <input class="inputs" type="text" id="user" name="user" required class="userInput"  placeholder="Usuario">
+                         </div>
+                         <div class="input-box">
+                              <i class="ri-lock-2-fill"></i>
+                              <input class="inputs" type="password" id="password" name="password" required class="passwordInput"  placeholder="Contraseña">
+                         </div>
+                         <button type="submit" class="btn">Iniciar sesión</button>
+                     </form>
+
+                    </div>
+               </div>
+          </div>
+     </section>
+</main>
+<!--===== Pie de Pagina (NO ESCRIBIR CODIGO DESPUES DE ESTE PUNTO) =====--> 
+<!--===== Pie de Pagina (NO ESCRIBIR CODIGO DESPUES DE ESTE PUNTO) =====--> 
+<footer class="home__footer">
+     <div class="footer__container1">
+         <div class="box">
+             <figure>
+                 <a href="#">
+                     <img src="IMAGES/logo.png" alt="Logo de JB (Jobify)">
+                 </a>
+             </figure>
+         </div>
+         <div class="box">
+             <h2>NOSOTROS</h2>
+             <p>Somos un grupo de programadores estudiantes a favor del trabajo digno y de la libertad del trabajador.</p>
+             <p>Con nuestra pagina esperamos que mas personas encuentren su trabajo ideal, con trasparerencia y un trato digno.</p>
+         </div>
+         <div class="box">
+          <h2>CONTACTANOS</h2>
+          <div class="redes">
+              <a href="https://www.facebook.com/profile.php?id=61558541945650" target="_blank" class="nav__social-iconf">
+                  <i class="ri-facebook-box-line"></i>
+             </a>
+             <a href="https://www.instagram.com/jobify.fy/?hl=es-es" target="_blank" class="nav__social-iconf">
+                  <i class="ri-instagram-line"></i>
+             </a>
+             <a href="https://twitter.com/Jobify_job" target="_blank" class="nav__social-iconf">
+                  <i class="ri-twitter-x-line"></i>
+             </a>
+          </div>
+      </div>
+     </div>
+     <div class="footer__container2">
+         <small>&copy; 2024 <b>Jobify</b> - Todos los derechos reservados.</small>
+     </div>
+ </footer>
+    <script src="JS\index.js"></script>
+</body>
+</html>

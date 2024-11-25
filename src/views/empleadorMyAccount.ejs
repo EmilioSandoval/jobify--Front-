@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Jobify</title>
+     <link rel="stylesheet" href="CSS/style2.css">
+     <!-- RemixIcon: Stylesheet de iconos de alta definicion. -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+     <!-- Encabezado de pagina. -->
+     <header class="header" id="header">
+      <!-- Contenedor de la navegacion. -->
+      <nav class="nav container">
+        <a href="/" class="nav__logo">Jobify</a>
+                 <a href="/" class="nav__logo">
+                    <img src="IMAGES/JBY.png" alt="Jobify Logo" style="height: 63px;">
+                 </a>
+        <p class="nav__logo">Mi perfil</p>
+
+        <!-- Menu de navegacion. -->
+        <div class="nav__menu" id="nav-menu">
+             <ul class="nav__list">
+                  <li class="nav__item">
+                       <a href="/empleador-auth" class="nav__link">Mis vacantes</a>
+                  </li>
+                  <li class="nav__item">
+                       <a href="/publicar-vacante" class="nav__link">Publicar</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="/empleador-buzon" class="nav__link">Mi buzón</a>
+               </li>
+                  <li class="nav__item">
+                       <a href="/empleador-mi-perfil" class="nav__link" style="text-decoration: underline;">Mi Perfil</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="/" class="nav__link">Cerrar sesión</a>
+                </li>
+             </ul>
+
+             <!-- Boton de cerrado. -->
+             <div class="nav__close" id="nav-close">
+                  <i class="ri-close-large-line"></i>
+             </div>
+        </div>
+
+   <!-- Boton de menu. -->
+   <div class="nav__toggle" id="nav-toggle">
+        <i class="ri-apps-2-line"></i>
+   </div>
+</nav>
+</header>
+<!--===== Pagina Principal =====-->
+<main class="main">
+     <!--====== Seccion de Inicio =====-->
+     <section class="home">
+          <div class="home__container">
+                <div class="container">
+                    <form class="form" action="/empleador-actualizar-informacion" method="post">
+                        <table class="table" id="table">
+                            <caption><h1>Mi información</h1></caption>
+                            <tbody>
+                                <tr>
+                                    <td><label for="emailInput">Correo electronico:</label></td>
+                                    <td><input id="emailInput" class="inputs" type="text" name="email" value="<%= empleadorEmail %>" disabled ></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="passwordInput">Contraseña:</label></td>
+                                    <td><input id="passwordInput" class="inputs" type="password" name="password" value="<%= password %>" disabled ></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="nameInput">Nombre de la empresa:</label></td>
+                                    <td><input id="nameInput" class="inputs" type="text" name="empresaName" value="<%= empresaName %>" disabled ></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="addressInput">Domicilio de la empresa:</label></td>
+                                    <td><input id="addressInput" class="inputs" type="text" name="address" value="<%= address %>" disabled ></td>
+                                </tr> 
+                                <tr>
+                                    <td><label for="razonSocialInput">Razon social de la empresa:</label></td>
+                                    <td><input id="razonSocialInput" class="inputs" type="text" name="razonSocial" value="<%= razonSocial %>" disabled ></td>
+                                </tr> 
+                                <tr>                
+                                    <td><label for="descriptionInput">Descripción de la empresa:</label></td>
+                                    <td><textarea cols="20" rows="5" id="descriptionInput" class="inputs" type="text" name="description" value="<%= description %>" disabled><%= description %></textarea></td>
+                                    
+                                </tr> 
+                                <tr>                
+                                    <td><label for="dateInput">Fecha de registro:</label></td>
+                                    <td><textarea id="dateInput" class="inputs" type="text" name="email" disabled cols="20" rows="4"><%= date %></textarea></td>
+                                </tr>
+                                    <td>
+                                        <button id="saveBtn" type="submit" class="btn" disabled >Guardar</button>    
+                                    </td>
+                                    
+                                    <td>
+                                        <button id="deleteBtn" class="btn" type="button" onclick="eliminarCuenta()">Eliminar Perfil</button>
+                                    </td>
+                                    <td>
+                                        <button id="editBtn" class="btn" type="button" >Editar informacion</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </for   m>
+                </div>
+            </div>
+    </section>
+</main>
+<!--===== Pie de Pagina (NO ESCRIBIR CODIGO DESPUES DE ESTE PUNTO) =====--> 
+<footer class="home__footer">
+     <div class="footer__container1">
+         <div class="box">
+             <figure>
+                 <a href="#">
+                     <img src="IMAGES/logo.png" alt="Logo de JB (Jobify)">
+                 </a>
+             </figure>
+         </div>
+         <div class="box">
+             <h2>NOSOTROS</h2>
+             <p>Somos un grupo de programadores estudiantes a favor del trabajo digno y de la libertad del trabajador.</p>
+             <p>Con nuestra pagina esperamos que mas personas encuentren su trabajo ideal, con trasparerencia y un trato digno.</p>
+         </div>
+         <div class="box">
+             <h2>CONTACTANOS</h2>
+             <div class="redes">
+                <a href="https://www.facebook.com/profile.php?id=61558541945650"  class="nav__social-iconf">
+                    Fb
+                    <i class="ri-facebook-box-line"></i>
+               </a>
+               <a href="https://www.instagram.com/jobify.fy/?hl=es-es" class="nav__social-iconf">
+                    Ig
+                    <i class="ri-instagram-line"></i>
+               </a>
+               <a href="https://twitter.com/Jobify_job" class="nav__social-iconf">
+                    Tw
+                    <i class="ri-twitter-x-line"></i>
+               </a>
+            </div>
+         </div>
+     </div>
+     <div class="footer__container2">
+         <small>&copy; 2024 <b>Jobify</b> - Todos los derechos reservados.</small>
+     </div>
+ </footer>
+ <script src="JS\index.js"></script>
+ <script>
+     function eliminarCuenta() {
+         // Aquí puedes realizar una confirmación antes de enviar la solicitud
+         if (confirm('¿Estás seguro de que deseas eliminar esta cuenta para siempre?')) {
+             document.getElementById("empleadorAccountForm").action = '/empleador-account-delete';
+             document.getElementById("empleadorAccountForm").submit();
+         }
+     }
+
+
+     window.onload = function() {
+     const emailInput = document.getElementById('emailInput');
+     const passwordInput = document.getElementById('passwordInput');
+     const nameInput = document.getElementById('nameInput');
+     const addressInput = document.getElementById('addressInput');
+     const razonSocialInput = document.getElementById('razonSocialInput');
+     const descriptionInput = document.getElementById('descriptionInput');
+
+     const editBtn = document.getElementById('editBtn');
+     const saveBtn = document.getElementById('saveBtn');
+ 
+     // Agrega un event listener al botón
+     editBtn.addEventListener('click', function() {
+         // Verifica si los inputs están deshabilitadosc 
+         if (emailInput.disabled) {
+             // Si están deshabilitados, habilítalos
+             emailInput.disabled = false;
+             passwordInput.disabled = false;
+             nameInput.disabled = false;
+             addressInput.disabled = false;
+             razonSocialInput.disabled = false;
+             descriptionInput.disabled = false;
+             saveBtn.disabled = false
+
+         } else {
+             // Si están habilitados, deshabilítalos
+             emailInput.disabled = true;
+             passwordInput.disabled = true;
+             nameInput.disabled = true;
+             addressInput.disabled = true;
+             razonSocialInput.disabled = true;
+             descriptionInput.disabled = true;
+             saveBtn.disabled = true;
+
+             editBtn.textContent = 'Editar información';
+         }
+     });
+ };
+ </script>
+</body>
+</html>

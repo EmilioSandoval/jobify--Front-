@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Jobify</title>
+     <link rel="stylesheet" href="CSS/style2.css">
+     <!-- RemixIcon: Stylesheet de iconos de alta definicion. -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+     <!-- Encabezado de pagina. -->
+     <header class="header" id="header">
+      <!-- Contenedor de la navegacion. -->
+          <nav class="nav container">
+            <a href="/" class="nav__logo">jobify</a>
+            <a href="/" class="nav__logo">
+               <img src="IMAGES/JBY.png" alt="Jobify Logo" style="height: 63px;">
+            </a>
+               <p class="nav__logo">Mi perfil</p>
+
+               <!-- Menu de navegacion. -->
+               <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                         <li class="nav__item">
+                              <a href="/usuario-auth" class="nav__link">Buscar vacantes</a>
+                         </li>
+                         <li class="nav__item">
+                              <a href="" class="nav__link" style="text-decoration: underline;">Mi Perfil</a>
+                         </li>
+                         <li class="nav__item">
+                            <a href="/usuario-postulaciones" class="nav__link">Mis postulaciones</a>
+                       </li>
+                         <li class="nav__item">
+                            <a  href="/" class="nav__link">Cerrar sesión</a>
+                       </li>
+                    </ul>
+
+                    <!-- Boton de cerrado. -->
+                    <div class="nav__close" id="nav-close">
+                         <i class="ri-close-large-line"></i>
+                    </div>
+
+                    <!-- Redes sociales. -->
+
+               </div>
+
+          <!-- Boton de menu. -->
+               <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-apps-2-line"></i>
+               </div>
+          </nav>
+     </header>
+
+
+<!--===== Pagina Principal =====-->
+<main class="main">
+     <!--====== Seccion de Inicio =====-->
+     <section class="home">
+          <div class="home__container">
+
+            <form class="form" action="/usuario-actualizar-informacion" method="post">
+                <table class="table" id="table">
+                    <caption><h1>Mi información</h1></caption>
+                    <tbody>
+                        <tr>
+                            <td><label for="1">Correo electronico:</label></td>
+                            <td><input id="1" class="inputs" type="text" name="email" value="<%= userEmail %>" disabled ></td>
+                        </tr>
+                        <tr>
+                            <td><label for="2">Contraseña:</label></td>
+                            <td><input id="2" class="inputs" type="password" name="password" value="<%= userPassword %>" disabled ></td>
+                        </tr>
+                        <tr>
+                            <td><label for="3">Nombre(s):</label></td>
+                            <td><input id="3" class="inputs" type="text" name="userName" value="<%= userName %>" disabled ></td>
+                        </tr>
+                        <tr>
+                            <td><label for="4">Appellido(s):</label></td>
+                            <td><input id="4" class="inputs" type="text" name="userLastName" value="<%= userLastName %>" disabled ></td>
+                        </tr> 
+                        <tr>
+                            <td><label for="5">Fecha de nacimiento:</label></td>
+                            <td><input id="5" class="inputs" type="text" name="userBirthday" value="<%= userBirthday %>" disabled ></td>
+                        </tr> 
+                        <tr>                
+                            <td><label for="6">Edad:</label></td>
+                            <td><input id="6" class="inputs" type="text" name="userAge" value="<%= userAge %>" disabled ></td>
+                        </tr> 
+                        <tr>                
+                            <td><label for="7">Domicilio:</label></td>
+                            <td><input id="7" class="inputs" type="text" name="userAddress" value="<%= userAddress %>" disabled ></td>
+                        </tr>
+                        <tr>                
+                            <td><label for="8">Numero de telefono:</label></td>
+                            <td><input id="8" class="inputs" type="text" name="phoneNumber" value="<%= phoneNumber %>" disabled ></td>
+                        </tr>
+                        <tr>                
+                            <td><label for="9">Fecha de registro:</label></td>
+                            <td><textarea id="9" class="inputs" type="text" name="email" disabled cols="18" rows="4"><%= userRegisterDate %></textarea></td>
+                        </tr>
+                            <td>
+                                <button id="saveBtn" type="submit" class="btn" disabled >Guardar</button>    
+                            </td>
+                            <td>
+                                <button id="deleteBtn" class="btn" type="button" disabled>Eliminar Perfil</button>
+                            </td>
+                            <td>
+                                <button id="editBtn" class="btn" type="button" >Editar información</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            
+
+          <div class="home__data">
+
+          </div>
+
+          </div>
+     </section>
+</main>
+<!--===== Pie de Pagina (NO ESCRIBIR CODIGO DESPUES DE ESTE PUNTO) =====--> 
+<footer class="home__footer">
+     <div class="footer__container1">
+         <div class="box">
+             <figure>
+                 <a href="#">
+                     <img src="IMAGES\logo.png" alt="Logo de JB (Jobify)">
+                 </a>
+             </figure>
+         </div>
+         <div class="box">
+             <h2>NOSOTROS</h2>
+             <p>Somos un grupo de programadores estudiantes a favor del trabajo digno y de la libertad del trabajador.</p>
+             <p>Con nuestra pagina esperamos que mas personas encuentren su trabajo ideal, con trasparerencia y un trato digno.</p>
+         </div>
+         <div class="box">
+             <h2>CONTACTANOS</h2>
+             <div class="redes">
+                <a href="https://www.facebook.com/profile.php?id=61558541945650"  class="nav__social-iconf">
+                    Fb
+                    <i class="ri-facebook-box-line"></i>
+               </a>
+               <a href="https://www.instagram.com/jobify.fy/?hl=es-es" class="nav__social-iconf">
+                    Ig
+                    <i class="ri-instagram-line"></i>
+               </a>
+               <a href="https://twitter.com/Jobify_job" class="nav__social-iconf">
+                    Tw
+                    <i class="ri-twitter-x-line"></i>
+               </a>
+            </div>
+         </div>
+     </div>
+     <div class="footer__container2">
+         <small>&copy; 2024 <b>Jobify</b> - Todos los derechos reservados.</small>
+     </div>
+ </footer>
+      <script src="JS\index.js"></script>
+
+      <script>
+
+            function eliminarCuenta() {
+                    // Aquí puedes realizar una confirmación antes de enviar la solicitud
+                    if (confirm('¿Estás seguro de que deseas eliminar esta cuenta para siempre?')) {
+                        document.getElementById("empleadorAccountForm").action = '/empleador-account-delete';
+                        document.getElementById("empleadorAccountForm").submit();
+                    }
+                }
+
+            window.onload = function() {
+                const a = document.getElementById('1');
+                const b = document.getElementById('2');
+                const c = document.getElementById('3');
+                const d = document.getElementById('4');
+                const e = document.getElementById('5');
+                const f = document.getElementById('6');
+                const g = document.getElementById('7');
+                const h = document.getElementById('8');
+
+
+                const editBtn = document.getElementById('editBtn');
+                const saveBtn = document.getElementById('saveBtn');
+            
+                // Agrega un event listener al botón
+                editBtn.addEventListener('click', function() {
+                    // Verifica si los inputs están deshabilitadosc 
+                    if (a.disabled) {
+                        // Si están deshabilitados, habilítalos
+                        a.disabled = false;
+                        b.disabled = false;
+                        c.disabled = false;
+                        d.disabled = false;
+                        e.disabled = false;
+                        f.disabled = false;
+                        g.disabled = false;
+                        h.disabled = false;
+
+                        saveBtn.disabled = false
+
+                    } else {
+                        // Si están habilitados, deshabilítalos
+                        a.disabled = true;
+                        b.disabled = true;
+                        c.disabled = true;
+                        d.disabled = true;
+                        e.disabled = true;
+                        f.disabled = true;
+                        g.disabled = true;
+                        h.disabled = true;
+
+                        editBtn.textContent = 'Editar información';
+                    }
+                });
+            };
+
+
+      </script>
+
+</body>
+</html>

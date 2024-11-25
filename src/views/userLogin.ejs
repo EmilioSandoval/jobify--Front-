@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="CSS/style2.css">
+    <!-- RemixIcon: Stylesheet de iconos de alta definicion. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+     <% if (typeof successRegister !== 'undefined' && successRegister) { %>
+          <script>
+              alert('Registro exitoso, inicia sesión');
+          </script>
+      <% } %>
+         <!-- Encabezado de pagina. -->
+         <header class="header" id="header">
+            <!-- Contenedor de la navegacion. -->
+                <nav class="navRL container">
+                    <a href="/" class="nav__logo">jobify</a>
+                      <a href="/" class="nav__logo">
+                         <img src="IMAGES/JBY.png" alt="Jobify Logo" style="height: 63px;">
+                      </a>
+           </nav>
+      </header>
+<!--===== Pagina Principal =====-->
+     <main class="main">
+          <!--====== Seccion de Inicio =====-->
+          <section class="home">
+               <div class="home__container">
+                    <div class="home__data">
+                         <form class="form" action="/user-login" method="POST">
+                              <h1>Iniciar sesión como usuario</h1>
+                              <div class="input-box">
+                                   <i class="ri-user-fill"></i>
+                                   <input class="inputs" type="email" id="email" name="email" required class="emailInput"  placeholder="Correo electronico">
+                                   <label for="email">Correo electronico</label>
+                              </div>
+                              <div class="input-box">
+                                   <i class="ri-lock-2-fill"></i>
+                                   <input class="inputs" type="password" id="password" name="password" required class="passwordInput"  placeholder="Contraseña">
+                                   <label for="password">Contraseña</label>
+                              </div>
+                              <% if (typeof loginExitoso !== 'undefined' && !loginExitoso) { %>
+                                   <p style="color: red; font-weight: bold;">Correo o contraseña incorrectos. Por favor, inténtalo de nuevo.</p>
+                               <% } %>
+                              <div class="remember-forgot">
+                                   <label for=""><input type="checkbox">Recordarme</label>
+                              </div>
+                              <button type="submit" class="btn">Iniciar sesión</button>
+                              <div class="register-link">
+                                   <p>No tienes una cuenta?<a href="/usuario-registro"> Registrate.</a></p>
+                              </div>
+                         </form>
+                         <div class="tarjeta">
+                              <div class="titulo">Funciones de un usuario.</div>
+                              <div class="cuerpo">
+                              <img src="IMAGES\EMPLEADO.jpg" alt="Empleado modelo (Jobify)">
+                              </div>
+                              <div class="pie">
+                                   <a href="#" class="arrow">Más información</a> 
+                                   <div class="contenido-oculto">
+                                        Un usuario promociona su perfil y se ofrece como candidato a las vacantes que encuentra mas acorde a su persona y a sus habilidades.<br>Tambien tiene la disposicion de aceptar el contenido de capacitacion que se le imparte y consumirlo acorde a como el empleador lo indique.
+                                   </div>
+                         </div>
+                    </div>
+               </div>
+          </section>
+     </main>
+<!--===== Pie de Pagina (NO ESCRIBIR CODIGO DESPUES DE ESTE PUNTO) =====--> 
+<footer class="home__footer">
+     <div class="footer__container1">
+         <div class="box">
+             <figure>
+                 <a href="#">
+                     <img src="IMAGES/logo.png" alt="Logo de JB (Jobify)">
+
+                 </a>
+             </figure>
+         </div>
+         <div class="box">
+             <h2>NOSOTROS</h2>
+             <p>Somos un grupo de programadores estudiantes a favor del trabajo digno y de la libertad del trabajador.</p>
+             <p>Con nuestra pagina esperamos que mas personas encuentren su trabajo ideal, con trasparerencia y un trato digno.</p>
+         </div>
+         <div class="box">
+          <h2>CONTACTANOS</h2>
+          <div class="redes">
+               <a href="https://www.facebook.com/profile.php?id=61558541945650"  class="nav__social-iconf">
+                   Fb
+                   <i class="ri-facebook-box-line"></i>
+              </a>
+              <a href="https://www.instagram.com/jobify.fy/?hl=es-es" class="nav__social-iconf">
+                   Ig
+                   <i class="ri-instagram-line"></i>
+              </a>
+              <a href="https://twitter.com/Jobify_job" class="nav__social-iconf">
+                   Tw
+                   <i class="ri-twitter-x-line"></i>
+              </a>
+           </div>
+      </div>
+     </div>
+     <div class="footer__container2">
+         <small>&copy; 2024 <b>Jobify</b> - Todos los derechos reservados.</small>
+     </div>
+ </footer>
+    <script src="JS\index.js"></script>
+</body>
+</html>

@@ -1,0 +1,638 @@
+/*-- Google Fonts --*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+/*-- CSS Variables --*/
+:root {
+     --header-height: 4rem;
+/*-- Colores de la pagina --*/
+    --main-color: #8a5300;
+    --lowmain-color: #926520;
+    --secondary-color: #f9f9f9;
+    --tertiary-color: #000000;
+    --forth-color: #424242;
+    --text-color: #333333;
+
+/*-- Fuentes de la pagina --*/
+    --body-font: 'Montserrat', sans-serif;
+    --biggest-font-size: 2.25rem;
+    --h2-font-size: 1.25rem;
+    --normnal-font-size: .938rem;
+    --small-font-size: 0.813rem;
+
+/*-- Forma del texto --*/
+    --font-light: 400;
+    --font-normal: 600;
+    --font-bold: 700;
+
+/*-- Index-Z  --*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*--======================== Tipografia responsiva ==============================--*/
+@media screen and (min-width: 1150px) {
+    :root {
+        --biggest-font-size: 3.5rem;
+        --normnal-font-size: 1rem;
+        --small-font-size: 0.875rem;
+    }
+}
+
+/*--============================== Bases de CSS =============================--*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+body {
+    font-family: var(--body-font);
+    font-size: var(--normnal-font-size);
+    color: var(--tertiary-color);
+    background-position: center;
+    background-size: fill;
+    background-attachment: fixed;
+    background-repeat: repeat-y;
+    background-repeat: repeat-x;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: var(--text-decoration);
+}
+img {
+    display: block ;
+    max-width: 100%;
+    height: auto;
+}
+/* ====== Clases Globales ======== */
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+.main {
+    overflow: hidden;
+}
+
+
+/*--============================ Header & Nav ===========================--*/
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--main-color);
+    transition: box-shadow 0.4s;
+}
+.nav {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navRL {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav__logo {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: var(--font-bold);
+    transition: 0.4s;
+}
+.nav__logo:hover {
+    font-size: 1.8rem;
+}
+.nav__close, .nav__toggle {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    display: flex;
+}
+
+
+/*--============================= Menu para mobiles ============================--*/
+@media screen and (max-width: 1023px) {
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background-color: var(--tertiary-color);
+        width: 100%;
+        height: 100%;
+        padding: 7rem 1.5rem 2.5rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: left 0.4s;
+    }
+}
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+.nav__link { 
+    color: var(--secondary-color);
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-normal);
+    transition: font-size 0.4s;
+}
+.nav__link:hover {
+    font-size: 1.8rem;
+    color: var(--main-color);
+}
+.nav__close {
+    color: var(--secondary-color);
+    position: absolute;
+    top: 1.15rem;
+    right: 1.5rem;
+    transition: 0.4s;
+}
+.nav__close:hover {
+    font-size: 1.8rem;
+    color: var(--main-color);
+}
+.nav__social {
+    display: flex;
+    column-gap: .75rem;
+    align-self: flex-end;
+    font-size: 1.5rem;
+    text-emphasis: none;
+    color: var(--secondary-color);
+}
+.nav__social-link {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    transition: color 0.4s;
+    text-decoration: none;
+    text-emphasis: none;
+}
+.nav__social-icon {
+    color: var(--secondary-color);
+    transition: 0.4s;
+}
+.nav__social-icon:hover {
+    font-size: 1.8rem;
+    color: var(--main-color);
+}
+.nav__social-iconf {
+    color: var(--secondary-color);
+    transition: 0.4s;
+}
+.nav__social-iconf:hover {
+    color: var(--tertiary-color);
+}
+.nav__toggle {
+    transition: 0.4s;
+}
+.nav__toggle:hover {
+    font-size: 1.8rem;
+    color: var(--tertiary-color);
+}
+
+
+/*--======== Mostrar Menu ========--*/
+.show-menu {
+    left: 0;
+}
+
+
+/*--======= Sombra Header =======--*/
+.bg-header {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+/*  ===================================== Diseno del Inicio ==========================================*/
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.home__container,
+.home__data,
+.home__footer{
+    display: grid;
+}
+.home__container{
+    padding-block: 7.5rem 2.5rem;
+    row-gap: 1.5rem;
+    height: 100%;
+}
+.home__data{
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    font: var(--font-normal);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    grid-gap: 50px;
+}
+.home__data .cre{
+    font-size: var(--biggest-font-size);
+    color: var(--tertiary-color);
+    background-color: blue;
+    border: #000000 outset 2px;
+    border-radius: 10px;
+    transition: .5s;
+}
+.home__data .ini{
+    font-size: var(--biggest-font-size);
+    color: var(--tertiary-color);
+    background-color: green;
+    border: #000000 outset 2px;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+/*=========================== Disenjo Vacantes ================================*/
+.vacante-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color:#ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #000000;
+    line-height: 1.5;
+    }
+.vacante-container p,
+.vacante-container ul,
+.vacante-container ol {
+    margin-bottom: 15px;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    }
+.vacante-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    }
+.vacante-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:#8a5300;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.vacante-btn:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/*=========================== Diseno de Tarjetas de presentacion =============================*/
+.contenido-oculto {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.contenido-oculto.mostrar {
+    max-height: 500px; 
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 20px; 
+    border-radius: 8px;
+}
+
+/* =========================== Diseno de tablas y formularios. =====================*/
+.form{
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: var(--secondary-color);
+}
+.form h1{
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-bold);
+    text-align: center;
+}
+
+
+/* ========================= Tarjeta de presentacion ==================== */
+.tarjeta{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width:420px;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 4px 4px var(--forth-color);
+    border-radius:15px;
+    font-family: sans-serif;
+    background-color: var(--secondary-color);
+  }
+  .titulo{
+    color: var(--secondary-color);
+    font-size: 24px;
+    padding: 10px 10px 5px 10px;
+    background-color: var(--main-color);
+    border-radius:15px 15px 0 0;
+  }
+  .cuerpo{
+    padding: 10px;
+  }
+  .tarjeta .cuerpo img{
+    width: 100%;
+    height: 90%;
+  }
+    .pie{
+    background: var(--main-color);
+    border-radius:0 0 15px 15px;
+    padding: 10px;
+    text-align:center;
+  } 
+  .pie a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+
+
+/* ============================= Formulario de Login ==================== */
+.form .input-box{
+    width: 80%;
+    height: 15%;
+    margin: 7% 0;
+    font-weight: var(--font-bold);
+}
+.input-box .inputs{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 30px;
+    font-size: var(--small-font-size);
+    padding: 20px 45px 20px 50px;
+}
+.input-box .inputs ::placeholder{
+    color: var(--tertiary-color);
+}
+.input-box i{
+    position: absolute;
+    font-size: 20px;
+    margin: 25px;
+}
+.table .inputs{
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 30px;
+    font-size: var(--small-font-size);
+    padding: 8px 33px 8px 18px;
+    margin: 10px;
+}
+.table .inputs ::placeholder{
+    color: var(--tertiary-color);
+}
+.form .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--small-font-size);
+    margin: 0px 10px 15px 0px;
+}
+.remember-forgot label input{
+    accent-color: var(--tertiary-color);
+    margin-right: 3px;
+}
+.remember-forgot a{
+    color: var(--tertiary-color);
+    text-decoration: none;
+    font-weight: var(--font-normal);
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+.form .btn {
+    padding: 15px;
+    background-color: var(--secondary-color);
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    box-shadow: 0 0 5px var(--text-color);
+    cursor: pointer;
+    transition: .4s;
+}
+.form .btn:hover{
+    font-size: var(--normal-font-size);
+    background-color: #0056b3;
+    color: white;
+}
+.form .login-link{
+    text-align: center;
+    margin-top: 10px;
+}
+.login-link p a{
+    color: var(--tertiary-color);
+    text-decoration: none;
+    font-weight: var(--font-bold);
+}
+.login-link p a:hover{
+    text-decoration: underline;
+}
+
+
+/* ============================ Formulario de registro ==================== */
+.form .input-boxR{
+    width: 95%;
+    height: 10%;
+    margin: 5% 0;
+    font-weight: var(--font-bold);
+}
+.account-info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    margin: 10px 0;
+}
+.enteprise-info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    margin: 10px 0;
+}
+.input-boxR .inputsR{
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 30px;
+    font-size: var(--small-font-size);
+    padding: 8px 33px 8px 18px;
+}
+.input-boxR .inputsR ::placeholder{
+    color: var(--tertiary-color);
+}
+.form .btnR {
+    width: 20%;
+    height: 10%0%;
+    padding: 10px 0;
+    background-color: var(--secondary-color);
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    box-shadow: 0 0 5px var(--text-color);
+    cursor: pointer;
+    transition: .4s;
+    margin: 3% 0;
+}
+.form .btnR:hover{
+    font-size: var(--normal-font-size);
+    background-color: #0056b3;
+    color: white;
+}
+.form .register-link{
+    text-align: center;
+    margin: 15px 20px;
+}
+.register-link p a{
+    color: var(--tertiary-color);
+    text-decoration: none;
+    font-weight: var(--font-bold);
+}
+.register-link p a:hover{
+    text-decoration: underline;
+}
+
+
+/*-- ====================================== Pie de pagina ================================ --*/
+.home__footer {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+}
+.footer__container1 {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+    margin: auto;
+    max-width: 1200px;
+}
+.footer__container1 .box figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.footer__container1 .box figure img{
+    width: 250px;
+}
+.footer__container1 .box h2, .footer__container1 .box p{
+    margin-bottom: 25px;
+}
+.redes a{
+    display: inline-block;
+    width: 15%;
+    height: 200%;
+    line-height: 250%;
+    margin-right: 10%;
+    background-color: var(--lowmain-color);
+    text-align: center;
+}
+.footer__container2{
+    background-color: var(--tertiary-color);
+    text-align: center;
+    padding: 1%;
+}
+
+/*-- ==== Barra de desplazamiento. ==== --*/
+::-webkit-scrollbar {
+    width: 0.6rem;
+    background-color: var(--forth-color);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--tertiary-color);
+}
+
+/*--================================ Distribucion por tamanos ============================--*/
+/*-- ======== Movil ========= --*/
+@media screen and (max-width: 330px){
+    .container { 
+        margin-inline: 1rem;
+    }
+    .home__title{
+        font-size: 1.8rem;
+    }
+    .home__circle{
+        width: 220px;
+        height: 220px;
+    }
+}
+/*-- ========= Tablet ========= --*/
+@media screen and (max-width: 550px) {
+    .footer__container1 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+        width: 90%;
+    }
+    .home__data{
+        width: 80%;
+        margin: auto;
+        justify-content: center;
+        font: var(--font-normal);
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        text-align: center;
+        grid-gap: 40px;
+    }
+}
+/*-- ======== Desktop ======== --*/
+@media screen and (min-width: 1024px){
+    .nav__menu{
+        height: calc(var(--header-height)) + 5rem;
+    }
+    .nav__toggle, .nav__close{
+        display: none;
+    }
+    .nav__link{
+        font-size: var(--font-normal);
+        transition: 0.4s;
+    }
+    .nav__link:hover {
+        font-size: 1.8rem;
+        color: var(--tertiary-color);
+    }
+    .nav__social{ 
+        column-gap: 1rem;
+    }
+    .nav__social-icon {
+        transition: 0.4s;
+    }
+    .nav__social-icon:hover {
+        font-size: 1.8rem;
+        color: var(--tertiary-color);
+    }
+    .nav__menu{
+        display: flex;
+        column-gap: 3rem;
+        align-items: center;
+    }
+    .nav__list{
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+}
+@media screen and (min-width: 1150px) {
+    .container{
+        margin-inline: auto;
+    }
+}
